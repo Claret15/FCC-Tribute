@@ -1,960 +1,729 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Nintendo History</title>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
-  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" defer></script>
+  <script src="https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js" defer></script>
   <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Play|Roboto:400,500i,700" rel="stylesheet">
-
-  <style>
-    body{
-      background-color: #FE6E79;
-      font-family: 'Roboto', sans-serif;
-      font-size: 1em;
-      padding: 0px;
-      margin: 0px;
-      color: black;
-    }
-    .italics {
-      font-style: italic;
-    }
-/* Set size of the Grid Layout */
-    #main {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr ;
-      background-color: #FFFFFF;
-    }
-    #heading {
-      background-color: #E60012;
-    }
-    #logo{
-      display: block;
-      margin: 0px auto;
-      max-width: 250px;
-    }
-    #title {
-      text-align: center;
-      font-family: 'Play', sans-serif;
-      font-size: 1.75em;
-      color: #FFFFFF;
-      padding: 0px 20px;
-      margin-top: 0px;
-    }
-    #img-div{
-      text-align: center;
-    }
-    #image{
-      display: block;
-      margin: auto;
-      max-width: 100%;
-    }
-    #img-caption {
-      font-size: 14px;
-      font-style: italic;
-      color: #FF9C52;
-    }
-    #tribute-info {
-      padding: 0px 20px;
-      text-align: justify;
-      font-weight: 400;
-    }
-    footer {
-      text-align: center;
-      background-color: #68EEE0;
-      font-size: 1em;
-    }
-
-/* Flex box layout for game items */
-    .game-flex-container {
-     display: flex;
-     flex-flow: row wrap;
-     justify-content: space-around;
-     align-items: center;
-    }
-    .flex-panel {
-      /* background-color: red; */
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      align-items: center;
-      justify-content: center;
-      flex: 0 1 300px;
-      margin: 0.6em 0.8em;
-    }
-    .flex-heading{
-      border: 0.2px #E60012 solid;
-      box-sizing: border-box;
-      height:50px;
-      background-color: #E60012;
-      border-top-left-radius: 5px;    /* Set border radius to match Flex Panel */
-      border-top-right-radius: 5px;
-      font-size: 1em;
-      /* CSS to vertically and horizontally align the div */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .flex-footer {
-      border: 0.5px #E60012 solid;
-      border-top: 0px;
-      box-sizing: border-box;
-      height: 50px;
-      background-color: yellow;
-      font-size: 15px;
-      border-bottom-left-radius: 5px;   /* Set border radius to match Flex Panel */
-      border-bottom-right-radius: 5px;
-      /* CSS to vertically and horizontally align the div */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .flex-heading-text {
-      text-align: center;
-      color: white;
-    }
-    .flex-footer-text{
-      text-align: center;
-      color: black;
-    }
-    .flex-image {
-      border: 0.5px #E60012 solid;
-      height: 200px;
-      background-color: #FFFFFF;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .flex-image img {
-      max-height: 99%;
-      max-width: 99%;
-    }
-    #tribute-link:link {
-      color: #E60012;
-      text-decoration: none;
-    }
-    #tribute-link:visited {
-      color: #003933;
-    }
-    #tribute-link:hover {
-      color: #FE6E79;
-      text-decoration: underline;
-    }
-
-/********** Media queries ***********/
-
-    /********** Min-width 520px ***********/
-
-    @media screen and (min-width: 520px) {
-
-      /* Adjust Grid layout to 2 Columns */
-      #main {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      /* Span across 2 columns */
-      #heading,#image-container, #tribute-info, footer {
-        grid-column: 1 / 3;
-      }
-      #logo {
-      max-width: 300px;
-      }
-      #title {
-        margin-top: 0px;
-        font-size: 2.5rem;
-      }
-      .game-flex-container {
-        grid-column: 1 / 3;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        align-items: center;
-      }
-      /* Resize the panels */
-      .flex-panel {
-        flex: 0 1 275px;
-      }
-      .flex-heading{
-        padding: 0px 20px;
-      }
-    }
-
-  /********** Min-width 720px ***********/
-    @media screen and (min-width: 720px) {
-      #title {
-        margin-top: 0px;
-        font-size: 3rem;
-      }
-      #tribute-info {
-        font-size: 1.125em;
-      }
-      #img-caption{
-        font-size: 1em;
-      }
-    }
-
-  /********** Min-width 992px ***********/
-    @media screen and (min-width: 992px) {
-      #title {
-        margin-top: 0px;
-        font-size: 3rem;
-      }
-    }
-
-  /********** Min-width 1220px ***********/
-  @media screen and (min-width: 1220px) {
-    /* Adjust layout of heading and image to be positioned side by side */
-    #heading {
-      grid-column: 1 / 2;         /* position on first column */
-      display: flex;              /* Converted to flexbox to adjust text position */
-      justify-content: center;
-      align-items: center;
-    }
-    #image-container {
-      grid-column: 2 / 3;         /* position on second column */
-      position: relative;         /* changed to relative as ref point for caption */
-    }
-    /* CSS to move position of caption on the image */
-    #img-caption-container{
-      position: absolute;         /* changed to absolute to reposition text */
-      bottom: 10px;
-      left: calc(100%/3.4);       /* calculate position of text */
-    }
-    #img-caption{
-      font-size: 14px;
-    }
-    /* Resize the panels */
-    .flex-panel {
-      margin: 1.5em 0em;
-    }
-  }
-  </style>
-
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-
 <!-- add grid container -->
-<div id="main">
+  <div id="main">
 
-  <div id="heading">
-    <header>
-      <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo.svg" alt="Nintendo logo">
-      <h1 id="title">Switch from Playing Cards</h1>
-    </header>
-  </div>
-
-  <div id="image-container">
-
-    <div id="img-div">
-      <img id="image" src="https://nintendowire.com/wp-content/uploads/2017/01/Banner-Switch-PlayingCards-Retro.jpg" alt="playing cards and switch" >
-
-      <div id="img-caption-container">
-      <figcaption id="img-caption">Nintendo Playing Cards and Nintendo Switch</figcaption>
-      </div>
-
+    <div id="heading">
+      <header>
+        <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo.svg" alt="Nintendo logo">
+        <h1 id="title">Switch from Playing Cards</h1>
+      </header>
     </div>
-  </div>
 
-  <div id="tribute-info">
-    <p>Nintendo is one of the world's largest video game companies by market capitalization, creating some of the best-known and top-selling video game franchises, such as Mario, The Legend of Zelda, and Pokémon. </p>
+    <div id="image-container">
 
-    <p>Founded on 23 September 1889 by Fusajiro Yamauchi, it originally produced handmade hanafuda playing cards. By 1963, Nintendo had tried several small niche businesses, such as cab services and love hotels. Abandoning previous ventures in favor of toys in the 1960s, Nintendo then developed into a video game company in the 1970s, ultimately becoming one of the most influential in the industry and Japan's third most-valuable company with a market value of over $85 billion.</p>
+      <div id="img-div">
+        <img id="image" src="https://nintendowire.com/wp-content/uploads/2017/01/Banner-Switch-PlayingCards-Retro.jpg" alt="playing cards in switch">
 
-    <p>Here you will find details of their video game history starting with the Color TV-Game home video game console released in 1977 through to their current and highly successful Nintendo Switch.
-  </div>
+        <div id="img-caption-container">
+        <figcaption id="img-caption">Nintendo Playing Cards and Nintendo Switch</figcaption>
+        </div>
 
-<!-- Flex Box for game items -->
-  <div class="game-flex-container">
+      </div>
+    </div>
+
+    <div id="tribute-info">
+      <p>Nintendo is one of the world's largest video game companies by market capitalization, creating some of the best-known and top-selling video game franchises, such as Mario, The Legend of Zelda, and Pokémon. </p>
+
+      <p>Founded on 23 September 1889 by Fusajiro Yamauchi, it originally produced handmade hanafuda playing cards. By 1963, Nintendo had tried several small niche businesses, such as cab services and love hotels. Abandoning previous ventures in favor of toys in the 1960s, Nintendo then developed into a video game company in the 1970s, ultimately becoming one of the most influential in the industry and Japan's third most-valuable company with a market value of over $85 billion.</p>
+
+      <p>Here you will find details of their video game history starting with the Color TV-Game home video game console released in 1977 through to their current and highly successful Nintendo Switch.
+    </div>
+
+  <!-- Flex Box for game items -->
+    <div class="game-flex-container">
 
 <!-- 1977 -->
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Color TV Game & Watch
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Color TV Game & Watch
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <img alt="Nintendo-Color-TV-Game-Blockbreaker-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nintendo-Color-TV-Game-Blockbreaker-FL.png/512px-Nintendo-Color-TV-Game-Blockbreaker-FL.png">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>1977</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>1980</span>
+        <div class="flex-image">
+          <img alt="Nintendo-Color-TV-Game-Blockbreaker-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nintendo-Color-TV-Game-Blockbreaker-FL.png/512px-Nintendo-Color-TV-Game-Blockbreaker-FL.png">
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>1977</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>1980</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1980 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Game & Watch
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Game & Watch
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <a title="By ThePViana [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Game_%26_Watch.png"><img width="256" alt="Game &amp; Watch" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Game_%26_Watch.png"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>28 April 1980</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>14 October 1991</span>
+        <div class="flex-image">
+          <a title="By ThePViana [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Game_%26_Watch.png"><img width="256" alt="Game &amp; Watch" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Game_%26_Watch.png"></a>
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>28 April 1980</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>14 October 1991</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1983 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Famicom
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Famicom
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <img alt="Nintendo-Famicom-Console-Set-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Nintendo-Famicom-Console-Set-FL.jpg/512px-Nintendo-Famicom-Console-Set-FL.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>15 July 1983</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>25 September 2003</span>
+        <div class="flex-image">
+          <img alt="Nintendo-Famicom-Console-Set-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Nintendo-Famicom-Console-Set-FL.jpg/512px-Nintendo-Famicom-Console-Set-FL.jpg">
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>15 July 1983</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>25 September 2003</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1985 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo Entertainment System (NES)
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo Entertainment System (NES)
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <img alt="NES-Console-Set" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/512px-NES-Console-Set.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>18 October 1985</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>14 August 1995</span>
+        <div class="flex-image">
+          <img alt="NES-Console-Set" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/512px-NES-Console-Set.jpg">
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>18 October 1985</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>14 August 1995</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1989 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Game Boy
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Game Boy
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <img width="150" alt="Game-Boy-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Game-Boy-FL.jpg/256px-Game-Boy-FL.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 April 1989</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>23 March 2003</span>
+        <div class="flex-image">
+          <img width="150" alt="Game-Boy-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Game-Boy-FL.jpg/256px-Game-Boy-FL.jpg">
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 April 1989</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>23 March 2003</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1989 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Super Famicom
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Super Famicom
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:SNES-Mod1-Console-Set.jpg"><img width="230" alt="SNES-Mod1-Console-Set" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/SNES-Mod1-Console-Set.jpg/512px-SNES-Mod1-Console-Set.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 November 1990</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>25 September 2003</span>
+        <div class="flex-image">
+          <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:SNES-Mod1-Console-Set.jpg"><img width="230" alt="SNES-Mod1-Console-Set" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/SNES-Mod1-Console-Set.jpg/512px-SNES-Mod1-Console-Set.jpg"></a>
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 November 1990</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>25 September 2003</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1990 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Super Nintendo Entertainment System (SNES)
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Super Nintendo Entertainment System (SNES)
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <a title="By Evan-Amos [Public domain], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-Super-Famicom-Set-FL.jpg"><img width="230" alt="Nintendo-Super-Famicom-Set-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Nintendo-Super-Famicom-Set-FL.jpg/512px-Nintendo-Super-Famicom-Set-FL.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 November 1990</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>25 September 2003</span>
+        <div class="flex-image">
+          <a title="By Evan-Amos [Public domain], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-Super-Famicom-Set-FL.jpg"><img width="230" alt="Nintendo-Super-Famicom-Set-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Nintendo-Super-Famicom-Set-FL.jpg/512px-Nintendo-Super-Famicom-Set-FL.jpg"></a>
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 November 1990</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>25 September 2003</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1995 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Virtual Boy
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Virtual Boy
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Virtual-Boy-Set.jpg"><img width="150" height="190" alt="Virtual-Boy-Set" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Virtual-Boy-Set.jpg/256px-Virtual-Boy-Set.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 July 1995</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>2 March 1996</span>
+        <div class="flex-image">
+          <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Virtual-Boy-Set.jpg"><img width="150" height="190" alt="Virtual-Boy-Set" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Virtual-Boy-Set.jpg/256px-Virtual-Boy-Set.jpg"></a>
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 July 1995</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>2 March 1996</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1996 - N64 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo 64
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo 64
+          </div>
         </div>
-      </div>
 
-      <div class="flex-image">
-        <img width="250" alt="Nintendo-64-wController-L" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Nintendo-64-wController-L.jpg/512px-Nintendo-64-wController-L.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>23 June 1996</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>30 November 2003</span>
+        <div class="flex-image">
+          <img width="250" alt="Nintendo-64-wController-L" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Nintendo-64-wController-L.jpg/512px-Nintendo-64-wController-L.jpg">
         </div>
-      </div>
 
-    </div>
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>23 June 1996</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>30 November 2003</span>
+          </div>
+        </div>
+
+      </div>
 
 <!-- 1996 - Game Boy Pocket -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Game Boy Pocket
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Game Boy Pocket
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img alt="Game-Boy-Pocket-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Game-Boy-Pocket-FL.jpg/256px-Game-Boy-Pocket-FL.jpg">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 July 1996</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>23 March 2003</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img alt="Game-Boy-Pocket-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Game-Boy-Pocket-FL.jpg/256px-Game-Boy-Pocket-FL.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 July 1996</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>23 March 2003</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 1997 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          SNS-101 (SNES Jr.)
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            SNS-101 (SNES Jr.)
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="Muband [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:SuperFamicom_jr.jpg"><img width="230" alt="SuperFamicom jr" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/SuperFamicom_jr.jpg"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>20 October 1997</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>25 September 2003</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <a title="Muband [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:SuperFamicom_jr.jpg"><img width="230" alt="SuperFamicom jr" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/SuperFamicom_jr.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>20 October 1997</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>25 September 2003</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 1998 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Game Boy Color
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Game Boy Color
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="By Evan-Amos [Public domain], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-Game-Boy-Color-FL.jpg"><img width="160" height="190" alt="Nintendo-Game-Boy-Color-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Nintendo-Game-Boy-Color-FL.jpg/256px-Nintendo-Game-Boy-Color-FL.jpg"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 October 1998</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>25 September 2003</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <a title="By Evan-Amos [Public domain], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-Game-Boy-Color-FL.jpg"><img width="160" height="190" alt="Nintendo-Game-Boy-Color-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Nintendo-Game-Boy-Color-FL.jpg/256px-Nintendo-Game-Boy-Color-FL.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 October 1998</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>25 September 2003</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2001 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Game Boy Advance
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Game Boy Advance
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img alt="Nintendo-Game-Boy-Advance-Purple-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Nintendo-Game-Boy-Advance-Purple-FL.jpg/512px-Nintendo-Game-Boy-Advance-Purple-FL.jpg">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 March 2001</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>15 May 2010</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img alt="Nintendo-Game-Boy-Advance-Purple-FL" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Nintendo-Game-Boy-Advance-Purple-FL.jpg/512px-Nintendo-Game-Boy-Advance-Purple-FL.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 March 2001</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>15 May 2010</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2001 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          GameCube
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            GameCube
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img width="250" alt="GameCube-Set" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/GameCube-Set.jpg/512px-GameCube-Set.jpg">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>14 September 2001</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>2007</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img width="250" alt="GameCube-Set" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/GameCube-Set.jpg/512px-GameCube-Set.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>14 September 2001</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>2007</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2003 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Game Boy Advance SP
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Game Boy Advance SP
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Game-Boy-Advance-SP-Mk1-Blue.jpg"><img width="190" alt="Game-Boy-Advance-SP-Mk1-Blue" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Game-Boy-Advance-SP-Mk1-Blue.jpg/512px-Game-Boy-Advance-SP-Mk1-Blue.jpg"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>14 February 2003</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>31 January 2008</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Game-Boy-Advance-SP-Mk1-Blue.jpg"><img width="190" alt="Game-Boy-Advance-SP-Mk1-Blue" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Game-Boy-Advance-SP-Mk1-Blue.jpg/512px-Game-Boy-Advance-SP-Mk1-Blue.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>14 February 2003</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>31 January 2008</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2004 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo DS
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo DS
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img width="210" alt="Nintendo-DS-Fat-Blue" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Nintendo-DS-Fat-Blue.png/512px-Nintendo-DS-Fat-Blue.png">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 November 2004</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>TBC</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img width="210" alt="Nintendo-DS-Fat-Blue" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Nintendo-DS-Fat-Blue.png/512px-Nintendo-DS-Fat-Blue.png">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 November 2004</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>TBC</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2006 - Nintendo DS Lite -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo DS Lite
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo DS Lite
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-DS-Lite-Black-Open.jpg"><img width="230" alt="Nintendo-DS-Lite-Black-Open" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Nintendo-DS-Lite-Black-Open.jpg/512px-Nintendo-DS-Lite-Black-Open.jpg"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>2 March 2006</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>TBC</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-DS-Lite-Black-Open.jpg"><img width="230" alt="Nintendo-DS-Lite-Black-Open" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Nintendo-DS-Lite-Black-Open.jpg/512px-Nintendo-DS-Lite-Black-Open.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>2 March 2006</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>TBC</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2006 - Nintendo Wii --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo Wii
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo Wii
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img alt="Wii-console" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Wii-console.jpg/512px-Wii-console.jpg">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>19 November 2006</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>20 October 2013</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img alt="Wii-console" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Wii-console.jpg/512px-Wii-console.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>19 November 2006</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>20 October 2013</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2008 - Nintendo DSi --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo DSi
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo DSi
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-DSi-Bl-Open.jpg"><img width="230" alt="Nintendo-DSi-Bl-Open" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Nintendo-DSi-Bl-Open.jpg/512px-Nintendo-DSi-Bl-Open.jpg"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>1 November 2008</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-DSi-Bl-Open.jpg"><img width="230" alt="Nintendo-DSi-Bl-Open" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Nintendo-DSi-Bl-Open.jpg/512px-Nintendo-DSi-Bl-Open.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>1 November 2008</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2009 --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo DSi XL
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo DSi XL
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-DSi-Bl-Open.jpg"><img width="230" alt="Nintendo-DSi-Bl-Open" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Nintendo-DSi-Bl-Open.jpg/512px-Nintendo-DSi-Bl-Open.jpg"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>21 November 2009</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <a title="By Evan-Amos [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Nintendo-DSi-Bl-Open.jpg"><img width="230" alt="Nintendo-DSi-Bl-Open" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Nintendo-DSi-Bl-Open.jpg/512px-Nintendo-DSi-Bl-Open.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>21 November 2009</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2011 -->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo 3DS
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo 3DS
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img width="200" alt="Nintendo-3DS-AquaOpen" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Nintendo-3DS-AquaOpen.png/512px-Nintendo-3DS-AquaOpen.png">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>26 February 2011</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img width="200" alt="Nintendo-3DS-AquaOpen" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Nintendo-3DS-AquaOpen.png/512px-Nintendo-3DS-AquaOpen.png">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>26 February 2011</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2012 - Wii U --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Wii U
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Wii U
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="By Takimata　(edited by:Tokyoship) (File:Wii U Console and Gamepad.jpg) [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Wii_U_Console_and_Gamepad.png"><img width="250" alt="Wii U Console and Gamepad" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Wii_U_Console_and_Gamepad.png/512px-Wii_U_Console_and_Gamepad.png"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>18 November 2012</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>31 January 2017</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <a title="By Takimata　(edited by:Tokyoship) (File:Wii U Console and Gamepad.jpg) [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Wii_U_Console_and_Gamepad.png"><img width="250" alt="Wii U Console and Gamepad" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Wii_U_Console_and_Gamepad.png/512px-Wii_U_Console_and_Gamepad.png"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>18 November 2012</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>31 January 2017</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2012 - Wii Mini --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Wii Mini
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Wii Mini
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img width="250" alt="Wii-Mini-Console-Set-H" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Wii-Mini-Console-Set-H.jpg/512px-Wii-Mini-Console-Set-H.jpg">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>7 December 2012</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>2017</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img width="250" alt="Wii-Mini-Console-Set-H" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Wii-Mini-Console-Set-H.jpg/512px-Wii-Mini-Console-Set-H.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>7 December 2012</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>2017</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2013 --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo 2DS
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo 2DS
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img width="230" alt="Nintendo-2DS-angle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Nintendo-2DS-angle.jpg/512px-Nintendo-2DS-angle.jpg">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>12 October 2013</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img width="230" alt="Nintendo-2DS-angle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Nintendo-2DS-angle.jpg/512px-Nintendo-2DS-angle.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>12 October 2013</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2016 --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          NES Classic Edition
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            NES Classic Edition
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="By MarcelBuehner [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:NCM_Konsole_mit_Controller.jpg"><img width="250" alt="NCM Konsole mit Controller" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/NCM_Konsole_mit_Controller.jpg/512px-NCM_Konsole_mit_Controller.jpg"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>10 November 2016</span>
+            <br>
+            <span class="italics">Discontinued: </span>
+            <span>15 April 2017</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <a title="By MarcelBuehner [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:NCM_Konsole_mit_Controller.jpg"><img width="250" alt="NCM Konsole mit Controller" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/NCM_Konsole_mit_Controller.jpg/512px-NCM_Konsole_mit_Controller.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>10 November 2016</span>
-          <br>
-          <span class="italics">Discontinued: </span>
-          <span>15 April 2017</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2017 - Switch --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Nintendo Switch
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Nintendo Switch
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <img alt="Nintendo-Switch-Console-Docked-wJoyConRB" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Nintendo-Switch-Console-Docked-wJoyConRB.jpg/512px-Nintendo-Switch-Console-Docked-wJoyConRB.jpg">
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>3 March 2017</span>
+          </div>
         </div>
       </div>
-
-      <div class="flex-image">
-        <img alt="Nintendo-Switch-Console-Docked-wJoyConRB" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Nintendo-Switch-Console-Docked-wJoyConRB.jpg/512px-Nintendo-Switch-Console-Docked-wJoyConRB.jpg">
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>3 March 2017</span>
-        </div>
-      </div>
-    </div>
 
 <!-- 2016 - Super Nes Classic Edition --->
 
-    <div class="flex-panel">
+      <div class="flex-panel">
 
-      <div class="flex-heading">
-        <div class="flex-heading-text">
-          Super NES Classic Edition
+        <div class="flex-heading">
+          <div class="flex-heading-text">
+            Super NES Classic Edition
+          </div>
+        </div>
+
+        <div class="flex-image">
+          <a title="By Northwest [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Super_NES_Classic_Edition.jpg"><img width="230" alt="Super NES Classic Edition" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Super_NES_Classic_Edition.jpg/512px-Super_NES_Classic_Edition.jpg"></a>
+        </div>
+
+        <div class="flex-footer">
+          <div class="flex-footer-text">
+            <span class="italics">Released: </span>
+            <span>29 September 2017</span>
+          </div>
         </div>
       </div>
 
-      <div class="flex-image">
-        <a title="By Northwest [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Super_NES_Classic_Edition.jpg"><img width="230" alt="Super NES Classic Edition" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Super_NES_Classic_Edition.jpg/512px-Super_NES_Classic_Edition.jpg"></a>
-      </div>
-
-      <div class="flex-footer">
-        <div class="flex-footer-text">
-          <span class="italics">Released: </span>
-          <span>29 September 2017</span>
-        </div>
-      </div>
     </div>
 
-  </div>
+    <footer>
+      <div>
+        <p class="italics">Source: <a id="tribute-link" href="https://en.wikipedia.org/wiki/Nintendo" target="_blank">Nintendo wikipedia page</a></p>
+      </div>
+    </footer>
 
-<footer>
-  <div>
-    <p class="italics">Source: <a id="tribute-link" href="https://en.wikipedia.org/wiki/Nintendo" target="_blank">Nintendo wikipedia page</a></p>
   </div>
-</footer>
-
-</div>
 
 <script>
 const projectName = 'tribute-page';
 localStorage.setItem('example_project', 'Tribute Page');
-
 </script>
-
 </body>
-
 </html>
